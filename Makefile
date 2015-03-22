@@ -6,7 +6,7 @@
 #    By: bbecker <bbecker@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/08/11 16:10:24 by bbecker           #+#    #+#              #
-#    Updated: 2015/03/21 17:18:43 by bbecker          ###   ########.fr        #
+#    Updated: 2015/03/22 17:53:14 by bbecker          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -154,10 +154,16 @@ LIBFTTOLIB	=	ft_atoi.o			\
 PRINTFSRCS	=	$(G)printf.c			\
 				$(G)ft_putstr_int.c		\
 				$(G)ft_putchar_int.c	\
+				$(G)ft_putnbr_int.c		\
+				$(G)ft_putlstr_int.c	\
+				$(G)ft_printaddr_int.c
 
 PRINTFTOLIB	=	printf.o			\
 				ft_putstr_int.o		\
-				ft_putchar_int.o
+				ft_putchar_int.o	\
+				ft_putnbr_int.o		\
+				ft_putlstr_int.o	\
+				ft_printaddr_int.o
 
 all: $(NAME)
 
@@ -168,7 +174,7 @@ $(NAME):
 	@gcc -c -Wall -Werror -Wextra $(PRINTFSRCS) -I$(I)
 	@ar rc $(NAME) $(LIBFTTOLIB) $(PRINTFTOLIB)
 	@ranlib $(NAME)
-	@echo "Libft OK."
+	@echo "Libft_printf OK."
 
 test:
 	@echo "Compiling libft sources with debug flags..."
@@ -177,7 +183,7 @@ test:
 	@gcc -c -g -Wall -Werror -Wextra $(PRINTFSRCS) -I$(I)
 	@ar rc $(NAME) $(LIBFTTOLIB) $(PRINTFTOLIB)
 	@ranlib $(NAME)
-	@echo "Libft OK."
+	@echo "Libft_printf OK."
 
 clean :
 	/bin/rm -rf $(LIBTOLIB) $(PRINTFTOLIB)

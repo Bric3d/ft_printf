@@ -6,7 +6,7 @@
 /*   By: bbecker <bbecker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 12:03:42 by bbecker           #+#    #+#             */
-/*   Updated: 2015/03/21 17:18:04 by bbecker          ###   ########.fr       */
+/*   Updated: 2015/03/22 18:15:35 by bbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <string.h>
 # include <stdarg.h>
 # include <unistd.h>
+# include <wchar.h>
 
 
 /*
@@ -25,6 +26,10 @@
 int		ft_printf(const char *format, ...);
 int		ft_putstr_int(char *s);
 int		ft_putchar_int(int c);
+int		ft_putnbr_int(int n);
+int		ft_putlstr_int(wchar_t *str);
+int		ft_printaddr_int(void *addr);
+int		ft_putllnbr_int(long long int n);
 
 /*
 **	libft sources
