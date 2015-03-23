@@ -6,7 +6,7 @@
 /*   By: bbecker <bbecker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/21 14:27:06 by bbecker           #+#    #+#             */
-/*   Updated: 2015/03/22 17:47:54 by bbecker          ###   ########.fr       */
+/*   Updated: 2015/03/23 17:36:12 by bbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ static void	printvar(char c, int *ret, va_list ap)
 	 		*ret = *ret + ft_printaddr_int(va_arg(ap, void *));
 		else if (c == 'd')
 			*ret = *ret + ft_putnbr_int(va_arg(ap, int));
+		else if (c == 'x')
+			*ret = *ret + ft_puthexa_int(va_arg(ap, int));
 	// 	else if (c == 'D')
 	// 		*ret = *ret + ft__int(va_arg(ap, ));
 	// 	else if (c == 'i')

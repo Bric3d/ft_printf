@@ -6,7 +6,7 @@
 #    By: bbecker <bbecker@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/08/11 16:10:24 by bbecker           #+#    #+#              #
-#    Updated: 2015/03/22 17:53:14 by bbecker          ###   ########.fr        #
+#    Updated: 2015/03/23 15:32:30 by bbecker          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -156,14 +156,16 @@ PRINTFSRCS	=	$(G)printf.c			\
 				$(G)ft_putchar_int.c	\
 				$(G)ft_putnbr_int.c		\
 				$(G)ft_putlstr_int.c	\
-				$(G)ft_printaddr_int.c
+				$(G)ft_printaddr_int.c	\
+				$(G)convert_to_base.c
 
 PRINTFTOLIB	=	printf.o			\
 				ft_putstr_int.o		\
 				ft_putchar_int.o	\
 				ft_putnbr_int.o		\
 				ft_putlstr_int.o	\
-				ft_printaddr_int.o
+				ft_printaddr_int.o	\
+				convert_to_base.o
 
 all: $(NAME)
 
@@ -186,7 +188,7 @@ test:
 	@echo "Libft_printf OK."
 
 clean :
-	/bin/rm -rf $(LIBTOLIB) $(PRINTFTOLIB)
+	/bin/rm -rf $(LIBFTTOLIB) $(PRINTFTOLIB)
 
 fclean: clean
 	/bin/rm -f $(NAME)

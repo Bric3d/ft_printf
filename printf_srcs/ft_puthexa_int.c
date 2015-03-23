@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printaddr_int.c                                 :+:      :+:    :+:   */
+/*   ft_puthexa_int.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbecker <bbecker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/22 17:49:05 by bbecker           #+#    #+#             */
-/*   Updated: 2015/03/23 16:39:11 by bbecker          ###   ########.fr       */
+/*   Created: 2015/03/23 16:55:28 by bbecker           #+#    #+#             */
+/*   Updated: 2015/03/23 17:15:39 by bbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_printaddr_int(void *addr)
+int	ft_puthexa_int(int n)
 {
-	long int	n;
 	int 		ret;
 	char		*tmp;
 
-	n = (long int)addr;
 	tmp = convert_dec_to_base(n, 16);
-	ret = ft_putstr_int("0x");
-	ret += ft_putstr_int(tmp);
+	ret = ft_putstr_int(tmp);
 	free(tmp);
 	return (ret);
 }

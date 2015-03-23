@@ -6,7 +6,7 @@
 /*   By: bbecker <bbecker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 12:03:42 by bbecker           #+#    #+#             */
-/*   Updated: 2015/03/22 18:15:35 by bbecker          ###   ########.fr       */
+/*   Updated: 2015/03/23 16:59:05 by bbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdarg.h>
 # include <unistd.h>
 # include <wchar.h>
+# include <stdlib.h>
 
 
 /*
@@ -30,6 +31,8 @@ int		ft_putnbr_int(int n);
 int		ft_putlstr_int(wchar_t *str);
 int		ft_printaddr_int(void *addr);
 int		ft_putllnbr_int(long long int n);
+char	*convert_dec_to_base(long long int nbr, int base);
+int		ft_puthexa_int(int n);
 
 /*
 **	libft sources
