@@ -6,11 +6,13 @@
 /*   By: bbecker <bbecker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/22 18:56:56 by bbecker           #+#    #+#             */
-/*   Updated: 2015/03/23 16:31:38 by bbecker          ###   ########.fr       */
+/*   Updated: 2015/03/24 17:27:29 by bbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char	g_c;
 
 static int		calcsize(long long int nbr, int base)
 {
@@ -41,7 +43,7 @@ static void		ft_putinchar(long long int nb, char *ret, int i)
 	if (nb >= 0 && nb <= 9)
 		ret[i] = nb + '0';
 	else if (nb >= 10)
-		ret[i] = nb - 10 + 'a';
+		ret[i] = nb - 10 + 'a' - g_c;
 }
 
 static void		ft_convert(long long int nbr, int base, char *ret, int len)
@@ -65,11 +67,13 @@ static void		ft_convert(long long int nbr, int base, char *ret, int len)
 	ret[len] = 0;
 }
 
-char		*convert_dec_to_base(long long int nbr, int base)
+char		*convert_dec_to_base(long long int nbr, int base, short param)
 {
 	int 	x;
 	char	*ret;
 
+	if (param == 2)
+		g_c = 32;
 	x = calcsize(nbr, base);
 	ret = (char *)ft_memalloc(sizeof(char) * (x + 1));
 	ft_convert(nbr, base, ret, x);

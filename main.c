@@ -6,12 +6,17 @@
 /*   By: bbecker <bbecker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/21 15:04:28 by bbecker           #+#    #+#             */
-/*   Updated: 2015/03/23 17:21:47 by bbecker          ###   ########.fr       */
+/*   Updated: 2015/03/26 15:20:31 by bbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
+# include <unistd.h>
+# include <string.h>
+#include <stdarg.h>
+#include <stdlib.h>
+#include <limits.h>
 
 int	main(void)
 {
@@ -78,10 +83,22 @@ int	main(void)
 	// ft_putnbr(ft_printf("%x\n", 970));
 	// ft_putendl("\n----");
 	// ft_putnbr(printf("%x\n", 970));
+	// ft_putendl("\n----");
+	// ft_putnbr(ft_printf("%S", L"米"));
+	// ft_putendl("\n----");
+	// ft_putnbr(printf("%S", L"米"));
+	// ft_putendl("\n----");
+	// ft_putnbr(ft_printf("%o\n", 970));
+	// ft_putendl("\n----");
+	// ft_putnbr(printf("%o\n", 970));
+	// ft_putendl("\n----");
+	// ft_putnbr(ft_printf("%C", L'猫'));
+	// ft_putendl("\n----");
+	// ft_putnbr(printf("%C", L'猫'));
 	ft_putendl("\n----");
-	ft_putnbr(ft_printf("%S", L"米"));
+	ft_putnbr(ft_printf("%U\n", 18446744073709551615));
 	ft_putendl("\n----");
-	ft_putnbr(printf("%S", L"米"));
+	ft_putnbr(printf("%U\n", 18446744073709551615));
 	ft_putendl("\n----");
 	return (0);
 }

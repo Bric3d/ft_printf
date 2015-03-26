@@ -6,7 +6,7 @@
 /*   By: bbecker <bbecker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 12:03:42 by bbecker           #+#    #+#             */
-/*   Updated: 2015/03/23 16:59:05 by bbecker          ###   ########.fr       */
+/*   Updated: 2015/03/26 16:36:40 by bbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,11 @@ int		ft_putnbr_int(int n);
 int		ft_putlstr_int(wchar_t *str);
 int		ft_printaddr_int(void *addr);
 int		ft_putllnbr_int(long long int n);
-char	*convert_dec_to_base(long long int nbr, int base);
-int		ft_puthexa_int(int n);
+char	*convert_dec_to_base(long long int nbr, int base, short param);
+int		ft_puthexa_int(long long int n, short param);
+int		ft_putoctal_int(long long int n);
+int		ft_putlchar_int(int c);
+int		ft_putunsgnllint_int(unsigned long long int n);
 
 /*
 **	libft sources

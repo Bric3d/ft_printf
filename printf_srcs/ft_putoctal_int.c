@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printaddr_int.c                                 :+:      :+:    :+:   */
+/*   ft_putoctal_int.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbecker <bbecker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/22 17:49:05 by bbecker           #+#    #+#             */
-/*   Updated: 2015/03/24 17:24:37 by bbecker          ###   ########.fr       */
+/*   Created: 2015/03/24 16:32:46 by bbecker           #+#    #+#             */
+/*   Updated: 2015/03/24 17:23:57 by bbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_printaddr_int(void *addr)
+int	ft_putoctal_int(long long int n)
 {
-	long int	n;
-	int 		ret;
-	char		*tmp;
+	char	*tmp;
+	int 	ret;
 
-	n = (long int)addr;
-	tmp = convert_dec_to_base(n, 16, 1);
-	ret = ft_putstr_int("0x");
-	ret += ft_putstr_int(tmp);
+	tmp = convert_dec_to_base(n, 8, 1);
+	ret = ft_putstr_int(tmp);
 	free(tmp);
 	return (ret);
 }

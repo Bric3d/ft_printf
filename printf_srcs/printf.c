@@ -6,7 +6,7 @@
 /*   By: bbecker <bbecker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/21 14:27:06 by bbecker           #+#    #+#             */
-/*   Updated: 2015/03/23 17:36:12 by bbecker          ###   ########.fr       */
+/*   Updated: 2015/03/26 16:50:24 by bbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,43 +17,35 @@ static void	printvar(char c, int *ret, va_list ap)
 	if (c)
 	{
 		if (c == 's')
-		{
 			*ret = *ret + ft_putstr_int(va_arg(ap, char *));
-		}
 	 	else if (c == 'S')
 	 		*ret = *ret + ft_putlstr_int(va_arg(ap, wchar_t *));
 	 	else if (c == 'p')
 	 		*ret = *ret + ft_printaddr_int(va_arg(ap, void *));
 		else if (c == 'd')
 			*ret = *ret + ft_putnbr_int(va_arg(ap, int));
+		else if (c == 'D')
+			*ret = *ret + ft_putllnbr_int(va_arg(ap, unsigned long int));
+		else if (c == 'i')
+			*ret = *ret + ft_putnbr_int(va_arg(ap, int));
+		else if (c == 'o')
+			*ret = *ret + ft_putoctal_int((unsigned int)va_arg(ap, int));
+		else if (c == 'O')
+			*ret = *ret + ft_putoctal_int((unsigned long int)va_arg(ap, unsigned long int));
+		else if (c == 'u')
+			*ret = *ret + ft_putunsgnllint_int((unsigned int)va_arg(ap, int));
+		else if (c == 'U')	
+			*ret = *ret +  ft_putunsgnllint_int((unsigned long int)va_arg(ap, unsigned long));
 		else if (c == 'x')
-			*ret = *ret + ft_puthexa_int(va_arg(ap, int));
-	// 	else if (c == 'D')
-	// 		*ret = *ret + ft__int(va_arg(ap, ));
-	// 	else if (c == 'i')
-	// 		*ret = *ret + ft__int(va_arg(ap, ));
-	// 	else if (c == 'o')
-	// 		*ret = *ret + ft__int(va_arg(ap, ));
-	// 	else if (c == 'O')
-	// 		*ret = *ret + ft__int(va_arg(ap, ));
-	// 	else if (c == 'u')
-	// 		*ret = *ret + ft__int(va_arg(ap, ));
-	// 	else if (c == 'U')
-	// 		*ret = *ret + ft__int(va_arg(ap, ));
-	// 	else if (c == 'x')
-	// 		*ret = *ret + ft__int(va_arg(ap, ));
-	// 	else if (c == 'X')
-	// 		*ret = *ret + ft__int(va_arg(ap, ));
+			*ret = *ret + ft_puthexa_int((unsigned int)va_arg(ap, int), 1);
+		else if (c == 'X')
+			*ret = *ret + ft_puthexa_int((unsigned int)va_arg(ap, int), 2);
 	 	else if (c == 'c')
-	 	{
 	 		*ret = *ret + ft_putchar_int(va_arg(ap, int));
-	 	}
-	// 	else if (c == 'C')
-	// 		*ret = *ret + ft__int(va_arg(ap, ));
+		else if (c == 'C')
+			*ret = *ret + ft_putlchar_int(va_arg(ap, wchar_t));
 	 	else if (c != ' ')
-	 	{
 			*ret = *ret + 1, ft_putchar(c);
-	 	}
 	}
 }
 
